@@ -5,4 +5,4 @@
 
 <h3>{episode.title}</h3>
 
-<a href={`/show/${episode.number}`}>{episode.title}</a>
+{@html episode.html}
