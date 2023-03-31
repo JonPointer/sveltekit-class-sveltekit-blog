@@ -1,4 +1,8 @@
-<form method="POST">
+<script>
+	import { enhance } from '$app/forms';
+</script>
+
+<form use:enhance method="POST">
 	<!-- POST means result is sent to +page.server.js file in same route directory  -->
 	<label>
 		Name: <input type="text" required name="name" id="name" />
