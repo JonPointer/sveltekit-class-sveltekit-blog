@@ -30,7 +30,7 @@
 				// update() = runs all of the normal default use:enhance functionality
 			};
 		}}
-		action="?/test"
+		action="?/email"
 		method="POST"
 	>
 		<!-- POST means result is sent to +page.server.js file in same route directory  -->
