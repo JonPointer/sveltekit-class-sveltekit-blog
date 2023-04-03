@@ -18,7 +18,21 @@
 		{form.message}
 	</p>
 {:else}
-	<form use:enhance method="POST">
+	<form
+		use:enhance={({ form, data, action, cancel }) => {
+			// form = form element
+			// data = FormData object
+			// action = url that the form posts to
+			// cancel() = function cancels the from from submitting
+			return ({ result, update }) => {
+				update(); // with just this, everything acts like the default
+				// result = ActionResult
+				// update() = runs all of the normal default use:enhance functionality
+			};
+		}}
+		action="?/test"
+		method="POST"
+	>
 		<!-- POST means result is sent to +page.server.js file in same route directory  -->
 		<label>
 			Name: <input type="text" required name="name" id="name" />
