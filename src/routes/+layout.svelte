@@ -1,4 +1,5 @@
 <script>
+	import { browser, building, dev, version } from '$app/environment';
 	import { navigating } from '$app/stores';
 	import Header from './Header.svelte';
 	import Footer from './Footer.svelte';
@@ -9,6 +10,11 @@
 
 	export let data;
 	$: ({ all_episodes } = data);
+	console.log(browser, building, dev, version);
+	// browser -> boolean if app is running in a browser
+	// building - true if current build for production
+	// dev - true if in development run environment - so could use to do things only when in local dev, but not in production
+	// version - config.kit.version.name
 </script>
 
 <Header />
