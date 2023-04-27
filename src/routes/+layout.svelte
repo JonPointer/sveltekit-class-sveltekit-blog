@@ -1,4 +1,5 @@
 <script>
+	import { navigating } from '$app/stores';
 	import Header from './Header.svelte';
 	import Footer from './Footer.svelte';
 
@@ -11,6 +12,10 @@
 </script>
 
 <Header />
+
+{#if !!$navigating}
+	<div class="loading">Loading</div>
+{/if}
 
 <main>
 	<div class="main">
@@ -31,5 +36,14 @@
 	}
 	aside {
 		order: -1;
+	}
+
+	.loading {
+		position: fixed;
+		inset: 0;
+		display: flex;
+		justify-content: center;
+		background-color: blue;
+		color: white;
 	}
 </style>

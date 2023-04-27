@@ -1,8 +1,11 @@
 <script>
 	import Test from '$lib/Test.svelte';
+	import { navigating, page, updated, getStores } from '$app/stores';
 	// Can reference db just like lib because we added an alias in svelte.config.js
 	import '$db/start';
 	export let data; // brings data from the +page.js file
+
+	console.log('navigating, page ', $navigating, $page);
 
 	$: ({ latest_episode } = data); // Reactive version of const {latest_episode, all_episodes} = data;
 </script>
